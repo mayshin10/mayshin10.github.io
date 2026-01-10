@@ -1,0 +1,13 @@
+{
+  "name": "mayshin10.github.io",
+  "version": "1.0.0",
+  "description": "Personal homepage",
+  "scripts": {
+    "dev": "hugo server",
+    "build": "hugo",
+    "clean": "rm -rf public"
+  },
+  "devDependencies": {
+    "hugo-extended": "latest"
+  }
+}

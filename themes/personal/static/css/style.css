@@ -1,0 +1,414 @@
+:root {
+    --bg-color: #1e1e2e;
+    --text-color: #e4e4e7;
+    --text-color-light: #a1a1aa;
+    --text-color-lighter: #71717a;
+    --text-color-bold: #ffffff;
+    --border-color: #36384d;
+    --primary-color: #818cf8;
+    --hover-bg: #27293d;
+}
+
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --text-color-light: #666;
+    --text-color-lighter: #999;
+    --text-color-bold: #000000;
+    --border-color: #e0e0e0;
+    --primary-color: #6366f1;
+    --hover-bg: #f5f5f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.1rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.header-nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.site-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color-bold);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.header-tabs {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header-tab {
+    color: var(--text-color-light);
+    text-decoration: none;
+    font-size: 1.05rem;
+    transition: all 0.2s;
+    padding: 0.5rem 0;
+    white-space: nowrap;
+    font-weight: normal;
+}
+
+.header-tab:hover {
+    color: var(--text-color);
+}
+
+.header-tab.active {
+    color: var(--text-color-bold);
+    font-weight: bold;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color-light);
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+}
+
+.theme-toggle:hover {
+    color: var(--text-color);
+}
+
+/* Main Content */
+.main-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 3rem 4rem 2rem 4rem;
+    display: flex;
+    gap: 3.5rem;
+    align-items: flex-start;
+}
+
+/* Profile Sidebar */
+.profile-sidebar {
+    flex-shrink: 0;
+    width: 280px;
+}
+
+.profile-image {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    width: 280px;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.3);
+}
+
+.profile-info {
+    text-align: center;
+}
+
+.profile-info h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2.1rem;
+    font-weight: 600;
+    color: var(--text-color-bold);
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--text-color-light);
+    margin: 0.5rem 0;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.subtitle .company-link {
+    color: #1428A0 !important;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: 500;
+}
+
+[data-theme="light"] .subtitle .company-link {
+    color: #1428A0 !important;
+}
+
+[data-theme="dark"] .subtitle .company-link {
+    color: #4A90E2 !important;
+}
+
+.subtitle .company-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+.location {
+    font-size: 1.2rem;
+    color: var(--text-color-light);
+    margin: 0.5rem 0 1rem 0;
+}
+
+.social-links {
+    margin-top: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    color: var(--text-color-light);
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: transparent;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+    background: var(--hover-bg);
+    transform: translateY(-2px);
+}
+
+.social-icon svg {
+    width: 28px;
+    height: 28px;
+    display: block;
+}
+
+/* Content */
+.content {
+    flex: 1;
+    min-width: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.content h2 {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+    font-size: 2.3rem;
+    font-weight: 600;
+    color: var(--text-color-bold);
+    scroll-margin-top: 100px;
+}
+
+.content h2:first-of-type {
+    margin-top: 0;
+}
+
+.content h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-color-bold);
+}
+
+.content p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.content ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.content li {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.content strong {
+    color: var(--text-color-bold);
+    font-weight: 600;
+}
+
+.content a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.content a:hover {
+    text-decoration: underline;
+}
+
+.content dl {
+    margin: 1.5rem 0;
+}
+
+.content dt {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color-bold);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.content dd {
+    font-size: 1.2rem;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: var(--text-color-light);
+}
+
+.company-samsung {
+    color: #1428A0 !important;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.company-samsung:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+[data-theme="light"] .company-samsung {
+    color: #1428A0 !important;
+}
+
+[data-theme="dark"] .company-samsung {
+    color: #4A90E2 !important;
+}
+
+.company-sk {
+    color: #E31E24 !important;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.company-sk:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+[data-theme="light"] .company-sk {
+    color: #E31E24 !important;
+}
+
+[data-theme="dark"] .company-sk {
+    color: #E31E24 !important;
+}
+
+/* Footer */
+.site-footer {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.5rem 4rem;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.footer-content {
+    color: var(--text-color-lighter);
+    font-size: 0.85rem;
+}
+
+.footer-content a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-content a:hover {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem;
+    }
+    
+    .profile-sidebar {
+        width: 100%;
+    }
+    
+    .header-nav {
+        padding: 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .header-left {
+        flex-wrap: wrap;
+    }
+    
+    .header-tabs {
+        gap: 1rem;
+    }
+    
+    .profile-info h1 {
+        font-size: 2rem;
+    }
+    
+    .profile-image {
+        width: min(200px, 80vw);
+        max-width: 100%;
+    }
+    
+    .site-footer {
+        padding: 1rem;
+    }
+}

@@ -1,0 +1,23 @@
+baseURL = 'https://mayshin10.github.io'
+languageCode = 'en-us'
+title = 'Minyoung Shin'
+theme = 'personal'
+
+[params]
+  name = "Minyoung Shin"
+  title = "Software Engineer"
+  company = "Samsung Research"
+  company_url = "https://research.samsung.com"
+  location = "Seoul, South Korea"
+  email = "myshin1307@gmail.com"
+  work_email = "may.shin@samsung.com"
+  github = "mayshin10"
+  linkedin = "mayshin10"
+  default_theme = "dark"
+  respect_system_theme = true
+  footer_text = "Built with <a href=\"https://gohugo.io\" target=\"_blank\" rel=\"noopener\">Hugo</a>"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
